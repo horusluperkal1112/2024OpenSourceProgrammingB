@@ -5,16 +5,24 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
-	fmt.Print("이름 입력 : ")
+	fmt.Print("점수 입력 : ")
 	in := bufio.NewReader(os.Stdin)
-	name, err := in.ReadString('\n')
-	fmt.Println(name)
+	score, err := in.ReadString('\n')
+
 	if err != nil {
 		log.Fatal(err)
+	}
+	score = strings.TrimSpace(score)              // 줄바꿈, 띄엇쓰기 탭 등 제거 python strip과 유사
+	realScore, _ := strconv.ParseFloat(score, 64) // 실수형 64bit 타입의 형변환
+
+	if realScore >= 90 {
+		fmt.Println("A")
 	} else {
-		fmt.Println(name)
+		fmt.Println("BCDF")
 	}
 }
