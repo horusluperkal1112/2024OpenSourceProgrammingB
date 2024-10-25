@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(answer)
 
 	for guesses := 0; guesses < 3; guesses++ {
-		fmt.Print("점수 입력 : ")
+		fmt.Printf("%d번의 기회가 남았습니다.", 3-guesses)
 		in := bufio.NewReader(os.Stdin)
 		input, err := in.ReadString('\n')
 
