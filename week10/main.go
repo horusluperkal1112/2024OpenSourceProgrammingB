@@ -32,7 +32,9 @@ func main() {
 		for i < n {
 			if n%i == 0 {
 				isPrime = false
+				break
 			}
+			fmt.Printf("%d ", i)
 			i++
 		}
 
