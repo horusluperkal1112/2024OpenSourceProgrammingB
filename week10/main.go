@@ -4,12 +4,14 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 func main() {
+	fmt.Printf("%f\n", math.Sqrt(25.0))
 	fmt.Print("정수 입력 : ")
 	in := bufio.NewReader(os.Stdin)
 	number, err := in.ReadString('\n')
@@ -17,8 +19,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	number = strings.TrimSpace(number) // 줄바꿈, 띄엇쓰기 탭 등 제거 python strip과 유사
-	n, _ := strconv.Atoi(number)       // 실수형 64bit 타입의 형변환
+	number = strings.TrimSpace(number) // ctrl c : 강제 종료
+	n, _ := strconv.Atoi(number)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -29,7 +31,7 @@ func main() {
 		isPrime = false
 	} else {
 		i := 2
-		for i < n {
+		for i <= int(math.Sqrt(float64(n))) {
 			if n%i == 0 {
 				isPrime = false
 				break
@@ -37,7 +39,6 @@ func main() {
 			fmt.Printf("%d ", i)
 			i++
 		}
-
 	}
 	if isPrime {
 		fmt.Printf("%d는(은) 소수입니다.", n)
