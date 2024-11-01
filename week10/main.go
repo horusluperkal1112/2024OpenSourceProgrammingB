@@ -29,15 +29,19 @@ func main() {
 
 	if n <= 1 {
 		isPrime = false
+	} else if n == 2 {
+		isPrime = true
+	} else if n%2 == 0 {
+		isPrime = false
 	} else {
-		i := 2
+		i := 3
 		for i <= int(math.Sqrt(float64(n))) {
 			if n%i == 0 {
 				isPrime = false
 				break
 			}
 			fmt.Printf("%d ", i)
-			i++
+			i = i + 2
 		}
 	}
 	if isPrime {
