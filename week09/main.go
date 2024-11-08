@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	r := fmt.Sprintf("%d\n", rand.Intn(6)+1)
+	r := fmt.Sprintf("%d\n", rand.Intn(6)+1) 
 	fmt.Println(reflect.TypeOf(r))
 	fmt.Printf("%T\n", r)
 	fmt.Printf("%T\n", 2.123213214)
