@@ -9,8 +9,14 @@ import (
 	"strings"
 )
 
-func isPrime(n int) bool {
+// input
+// 10
+// 19
 
+// output
+// 11 13 17 19
+
+func isPrime(n int) bool {
 	if n <= 1 {
 		return false
 	} else if n == 2 {
@@ -23,37 +29,33 @@ func isPrime(n int) bool {
 			if n%i == 0 {
 				return false
 			}
-			fmt.Printf("%d ", i)
+			//fmt.Printf("%d ", i)
 			i = i + 2
 		}
 	}
 	return true
 }
-func main() {
-	fmt.Print("첫째 정수 입력(시작값) : ")
+
+func getInteger() int {
 	in := bufio.NewReader(os.Stdin)
 	a, err := in.ReadString('\n')
+	if err != nil {
+		log.Fatal(err)
+	}
 
+	a = strings.TrimSpace(a)
+	number, err := strconv.Atoi(a)
 	if err != nil {
 		log.Fatal(err)
 	}
-	a = strings.TrimSpace(a) // ctrl c : 강제 종료
-	n1, _ := strconv.Atoi(a)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Print("둘째 정수 입력(종료값) : ")
-	//in := bufio.NewReader(os.Stdin)
-	b, err := in.ReadString('\n')
+	return number
+}
 
-	if err != nil {
-		log.Fatal(err)
-	}
-	b = strings.TrimSpace(b) // ctrl c : 강제 종료
-	n2, _ := strconv.Atoi(b)
-	if err != nil {
-		log.Fatal(err)
-	}
+func main() {
+	fmt.Print("첫 번째 정수(시작 값) 입력 : ")
+	n1 := getInteger()
+	fmt.Print("두 번째 정수(끝 값) 입력 : ")
+	n2 := getInteger()
 
 	for i := n1; i <= n2; i++ {
 		if isPrime(i) {
