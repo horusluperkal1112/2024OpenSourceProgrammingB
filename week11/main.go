@@ -1,7 +1,7 @@
 package main
 
 import (
-	"week05/week11/greeting"
+	"week11/greeting"
 )
 
 func main() {
