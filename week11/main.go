@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	greeting.Hello("Inha")
-	greeting.Hi("lol")
-
+	//greeting.Hello("Inha")
+	//greeting.Hi("lol")
+	greeting.EnglishGreetings("Inha", "lol")
 }
