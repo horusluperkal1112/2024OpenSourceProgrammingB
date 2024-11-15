@@ -27,6 +27,6 @@ func main() {
 	*/
 	for i, date := range dates { //ㅣlike python for in
 		fmt.Println(i, date)
-	}
+	} //index 사용 버전. _시 비사용 가능
 
 }
