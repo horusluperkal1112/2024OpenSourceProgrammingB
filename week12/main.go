@@ -2,31 +2,30 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"reflect"
 )
 
 func main() {
-	//var dates [3]time.Time
-	//dates[0] = time.Unix(0, 0)
-	//dates[2] = time.Unix(1708012345, 1)
+	// Create a slice by slicing make functuon
 
-	//fmt.Println(dates[0], dates[1], dates[2])
+	var gpaSlice []float64
+	gpaSlice = make([]float64, 3)
+	gpaSlice[0] = 4.1
+	gpaSlice[1] = 4.5
+	gpaSlice[2] = 3.5
+	fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
 
-	dates := [3]time.Time{
-		time.Unix(0, 0),
-		time.Unix(1, 0),
-		time.Unix(1708012345, 0), // 마지막에도 ","을 작성해야 해당 방법으로 작동
-	}
-	//fmt.Println(dates[0], dates[1], dates[2])
-	//fmt.Println(dates)
-	//fmt.Printf("%#v\n", dates)
-	/*
-		for i := 0; i < len(dates); i++ {
-			fmt.Println(1, dates[i])
-		}
-	*/
-	for i, date := range dates { //ㅣlike python for in
-		fmt.Println(i, date)
-	} //index 사용 버전. _시 비사용 가능
+	// Create a slice by slicing literal
+	//gpas := [5]float32{3.5, 4.1, 4.5, 3.9, 4.23}
+	//fmt.Println(gpas, reflect.TypeOf(gpas))
+
+	//gpaSlice := gpas[1:4]
+	//fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
+
+	//gpaSlice := gpas[1:4]
+	//fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
+
+	//gpas := [5]float32{3.5, 4.1, 4.5, 3.9, 4.23}
+	//fmt.Println(gpas, reflect.TypeOf(gpas))
 
 }
